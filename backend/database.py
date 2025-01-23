@@ -16,3 +16,8 @@ db = client.TextMe  # Cambia "instant_db" por el nombre de tu base de datos
 
 # Colecciones específicas
 messages_collection = db.messages
+
+if __name__ == "__main__":
+    import uvicorn
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)
