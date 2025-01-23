@@ -8,6 +8,10 @@ from schemas import message_schema, messages_schema, cabecera_schema, cabeceras_
 # Crear la aplicación principal
 app = FastAPI()
 
+@app.get("/")
+def read_root():
+    return {"message": "¡Backend desplegado correctamente!"}
+
 # Obtener los datos de cabecera (id, de, para, asunto, timestamp) de los mensajes enviados y recibidos por un usuario dado, en orden descendente de fecha y hora, y en caso de que coincidan, por id
 @app.get("/header/{email}")
 async def get_header(email: str):
