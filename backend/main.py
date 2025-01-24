@@ -4,9 +4,18 @@ from bson import ObjectId
 from database import messages_collection
 from models import Message
 from schemas import message_schema, messages_schema, cabecera_schema, cabeceras_schema
+from fastapi.middleware.cors import CORSMiddleware
 
 # Crear la aplicación principal
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Cambia "*" por la URL de tu frontend en producción
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 @app.get("/")
 def read_root():
