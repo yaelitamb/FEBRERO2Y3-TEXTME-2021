@@ -13,7 +13,6 @@ export default async function MessageListPage() {
 
   return (
     <div>
-      <h1>Tus Mensajes</h1>
       <MessageList email={email} /> {/* Pasa el email como prop */}
     </div>
   );

@@ -31,7 +31,6 @@ export default function Home() {
 
   return (
     <div>
-      <h1>Mis mensajes</h1>
       <MessageList /> {/* Muestra los mensajes del usuario */}
     </div>
   );
